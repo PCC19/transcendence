@@ -1,5 +1,3 @@
-# MARIADB DOCKERFILE
-#FROM debian:buster
 FROM node:18.12.0-alpine3.16
 
 # Copy scripts to inside container
@@ -7,12 +5,9 @@ FROM node:18.12.0-alpine3.16
 
 RUN apk update && apk upgrade && apk add bash && apk add vim
 
-# Execute installation script
-#RUN ./install_node.sh
-
 RUN mkdir /app
 
-EXPOSE 3000
+EXPOSE 8080
 
 #ENTRYPOINT ["/conf/setup_mariadb.sh"]
 

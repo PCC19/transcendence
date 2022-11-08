@@ -12,16 +12,18 @@ all: down build
 
 build:
 	echo "Building ..."
-	docker build -t node_img .
+	docker-compose up --build back postgres
+	#docker build -t node_img .
 	#docker-compose $(YML) $(ENV) build
 
 down:
-	docker container stop node_c
+	docker-compose down
+	#docker container stop node_c
 	#docker-compose $(YML) $(ENV) down
 
 clean: down
-	echo "Deleting container ..."
-	docker container rm node_c
+	#echo "Deleting container ..."
+	#docker container rm node_c
 
 fclean: down
 	echo "Docker pruning ..."
@@ -30,7 +32,8 @@ fclean: down
 re: fclean build up
 
 up:
-	docker run -it -v ~/transcendence:/app/ -p 3000:3000 --name node_c node_img
+	docker-compose up
+	#docker run -it -v ~/transcendence:/app/ -p 3000:3000 --name node_c node_img
 	#docker-compose $(YML) $(ENV) up -d 
 	#docker-compose $(YML) $(ENV) ps -a
 
