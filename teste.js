@@ -1,0 +1,11 @@
+ // load http module
+ const http = require('http');
+     // create http server
+	 http
+	 .createServer((req, res) => {
+		 // content header
+		 res.writeHead(200, { 'content-type': 'text/plain' });
+		 // write message and signal communication is complete
+		 res.end('Hello, World!'); })
+	 .listen(3000);
+	 console.log('Server running on port 3000');

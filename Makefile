@@ -30,7 +30,7 @@ fclean: down
 re: fclean build up
 
 up:
-	docker run -it --name node_c node_img
+	docker run -it -v ~/transcendence:/app/ -p 3000:3000 --name node_c node_img
 	#docker-compose $(YML) $(ENV) up -d 
 	#docker-compose $(YML) $(ENV) ps -a
 
