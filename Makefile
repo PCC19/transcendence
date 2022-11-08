@@ -12,7 +12,8 @@ all: down build
 
 build:
 	echo "Building ..."
-	docker-compose up --build back postgres
+	docker-compose build
+	#docker-compose up --build back postgres
 	#docker build -t node_img .
 	#docker-compose $(YML) $(ENV) build
 
