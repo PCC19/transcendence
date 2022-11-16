@@ -24,6 +24,7 @@ down:
 
 clean: down
 	#echo "Deleting container ..."
+	docker co
 	#docker container rm node_c
 
 fclean: down
@@ -42,4 +43,6 @@ up:
 #	docker-compose $(YML) $(ENV) ps -a
 
 back:
-	docker run -it back bash
+	docker exec -it back bash
+	#docker container rm lixo
+	#docker run -it --name lixo -v ~/transcendence/back:/back back /bin/bash

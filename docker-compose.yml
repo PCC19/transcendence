@@ -12,6 +12,8 @@ services:
         build: ./back
         ports:
             - "8080:8080"
+        volumes:
+            - /home/user42/transcendence/back:/back
         networks:
             - pong_network
     postgres:
@@ -25,6 +27,7 @@ services:
         environment:
             - POSTGRES_USER=root
             - POSTGRES_PASSWORD=imroot
+              
         #- ./postgres_data:/var/lib/postgresql/data
       #env_file:
       #- docker.env
