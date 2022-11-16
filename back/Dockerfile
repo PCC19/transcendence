@@ -6,8 +6,14 @@ FROM node:18.12.0-alpine3.16
 RUN apk update && apk upgrade && apk add bash && apk add vim
 
 RUN mkdir /app
+COPY . ./back
 RUN npm install -g npm@8.19.3
 RUN npm install -g @nestjs/cli
+RUN npm install -g pg
+RUN npm install -g @types/node
+RUN npm install -g typeorm
+
+
 
 EXPOSE 8080
 
@@ -15,3 +21,4 @@ EXPOSE 8080
 
 # Infinite loop
 CMD ["bash"]
+

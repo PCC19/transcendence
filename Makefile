@@ -1,4 +1,4 @@
-.PHONY: all build buildno up down clean fclean ps
+.PHONY: all build buildno up down clean fclean ps back
 
 YML= -f ./srcs/docker-compose.yml
 ENV= --env-file ./srcs/.env
@@ -41,3 +41,5 @@ up:
 #ps:
 #	docker-compose $(YML) $(ENV) ps -a
 
+back:
+	docker run -it back bash
