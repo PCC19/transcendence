@@ -8,15 +8,16 @@ RUN apk update && apk upgrade && apk add bash && apk add vim
 RUN mkdir /app
 RUN mkdir /back
 COPY . ./back
-RUN npm install -g npm@8.19.3
-RUN npm install -g @nestjs/cli
-RUN npm install -g pg
-RUN npm install -g @types/node
-RUN npm install -g typeorm
+#RUN npm install
+#RUN npm install -g npm@8.19.3
+#RUN npm install -g @nestjs/cli
+#RUN npm install -g pg
+#RUN npm install -g @types/node
+#RUN npm install -g typeorm
 
 
 
-EXPOSE 8080
+EXPOSE 8080 3000
 
 #ENTRYPOINT ["/conf/setup_mariadb.sh"]
 

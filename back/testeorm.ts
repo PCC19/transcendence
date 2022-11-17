@@ -1,4 +1,7 @@
-import { Entity, Column, PrimaryColumn } from "typeorm"
+//import { Entity, Column, PrimaryColumn } from "typeorm"
+const { Entity } = require('typeorm')
+const { Column } = require('typeorm')
+const { PrimaryColumn } = require('typeorm')
 
 @Entity()
 export class Nomes {
